@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class MainApp {
-   public static void main(String[] args) throws SQLException {
+   public static void main(String[] args) {
       AnnotationConfigApplicationContext context = 
             new AnnotationConfigApplicationContext(AppConfig.class);
 
@@ -21,6 +21,7 @@ public class MainApp {
       userService.add(aUser1);
       userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
       Car car2 = new Car("Mercedes",77);
+
       User aUser3 = new User("User3", "Lastname3", "user3@mail.ru");
       aUser3.setCar(car2);
       userService.add(aUser3);
@@ -30,7 +31,7 @@ public class MainApp {
       List<User> users = userService.listUsers();
       users.forEach(System.out::println);
 
-      User user = userService.getUserByCar("Mercedes",77);
+      User user = userService.getUserByCar("Porsche",45);
       System.out.println("user="+user);
 
       User userNF = userService.getUserByCar("dfgdfgdf",77);

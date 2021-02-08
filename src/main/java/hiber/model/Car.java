@@ -13,16 +13,9 @@ public class Car {
 
     private int series;
 
-    @OneToOne(mappedBy = "car")
-    private User user;
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+
 
     public Long getId() {
         return id;
